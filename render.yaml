@@ -31,26 +31,21 @@ services:
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
 
-      # These automatically populate connection details 
-      # for the Render Postgres database defined below
+      # Database connection details for Postgres
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_DATABASE
-        fromDatabase:
-          name: n8n-db
-          property: database
+        value: "postgres"
       - key: DB_POSTGRESDB_HOST
-        fromDatabase:
-          name: n8n-db
-          property: host
-      - key: DB_POSTGRESDB_PASSWORD
-        fromDatabase:
-          name: n8n-db
-          property: password
+        value: "aws-0-ap-northeast-1.pooler.supabase.com"
+      - key: DB_POSTGRESDB_PORT
+        value: "6543"
       - key: DB_POSTGRESDB_USER
-        fromDatabase:
-          name: n8n-db
-          property: user
+        value: "postgres.nskambggcyvxgnhsvtng"
+      - key: DB_POSTGRESDB_PASSWORD
+        value: "Nos0181@ai."
+      - key: DB_POSTGRESDB_SCHEMA
+        value: "public"
 
 databases:
   - name: n8n-db
